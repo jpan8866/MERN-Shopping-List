@@ -14,4 +14,5 @@ const ItemSchema = new Schema({
 });
 
 const Item = mongoose.model('item', ItemSchema);
+// Item is our database. Export so we can use it in other files to add or retrieve
 module.exports = Item;

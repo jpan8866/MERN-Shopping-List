@@ -13,11 +13,11 @@ app.use(bodyParser.json());
 // need a mongoDB URI to connect to
 // We put the URI in the config folder for best practice sake
 // we only need the mongoURI element from the keys.js
-//const db = require('./config/keys.js').mongoURI;
+const db = require('./config/keys.js').mongoURI;
 
 // Connect to Mongo
 mongoose
-    .connect("mongodb+srv://John:john123@cluster0.nmtde.mongodb.net/mern-shopping?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true })
+    .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('mongoDB connected.'))
     .catch((err) => console.log(err));
 
