@@ -18,7 +18,7 @@ router.get("/", (req,res) => {
         .sort({ date: -1 }) // -1 for descending
         .then(items => res.json(items))
 })
-// Note whenever we hit the end point api/items, we are routed to this very file, hence '/'
+// Note whenever we hit the end point api/items, we are routed to this very file, hence '/' which is this file
 
 // @route POST api/items
 // @desc Create an Item
