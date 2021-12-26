@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser'); // allows to take requests and get data from body
+const path = require('path');
 // note syntax above is same as: import express from 'express'
 // need to add type:module in pacakage.json 
  
@@ -26,6 +27,18 @@ const items = require('./routes/api/items.js'); // import statement equivalent i
 // use routes. Anything that goes to api/items should refer to the items variable, which contains the routes. 
 // the url to use is api/items
 app.use('/api/items',items);
+
+// Serve static assets if in production
+if (process.env.NODE_ENV === 'production') {
+    // set static folder. Once in production, the post build script will build the app and create this folder
+    app.use(express.static('client/build'));
+
+    // sendFile sends static file to client
+    // every path except api and if in production
+    app.get('*', (req,res) => {
+        res.sendFile(path.resolve(__dirname, 'client','build','index.html'));
+    });
+}
 
 const port = process.env.PORT || 5000; // use either the port in environmental variable or port 5000
 

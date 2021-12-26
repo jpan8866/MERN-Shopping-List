@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input } from 'reactstrap';
 import { addItem }from '../actions/itemActions';
 import { useDispatch } from 'react-redux';
-import { v4 as uuid } from 'uuid'; // use this temporarily for static data (eventually will be connected to database)
+//import { v4 as uuid } from 'uuid'; // use this temporarily for static data (eventually will be connected to database)
 
 
 const ItemModal = () => {

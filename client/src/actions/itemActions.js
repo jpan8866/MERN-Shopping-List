@@ -7,6 +7,7 @@ export const getItems = () => async dispatch => {
     // recall we set up route as /api/items, can perform GET, POST, and DELETE. See items.js file 
     const res = await fetch('/api/items');
     const data = await res.json();
+    // need to use .json() to parse json into js object
     console.log('data fetched and dispatched');
     dispatch({
         type: GET_ITEMS,

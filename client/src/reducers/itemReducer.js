@@ -1,6 +1,6 @@
 // reduces item
 import { GET_ITEMS, ADD_ITEM, DELETE_ITEM, ITEMS_LOADING } from '../actions/types';
-import { v4 as uuid } from 'uuid'; 
+//import { v4 as uuid } from 'uuid'; 
 
 const initialState = {
     items: [
@@ -12,7 +12,7 @@ const initialState = {
     loading: false
 };
 
-export default function(state = initialState, action) {
+export default function itemReducer(state = initialState, action) {
     switch(action.type) {
         case GET_ITEMS:
             return {
